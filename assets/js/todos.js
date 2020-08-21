@@ -12,11 +12,14 @@ $("ul").on("click", "li span", function(event){
     event.stopPropagation();
 });
 
-
 $("input[type='text']").keypress(function(event){
     if (event.which === 13) {
         let todoText = $(this).val();
         $(this).val("");
-        $("ul").append("<li>"+todoText+"<span>X</span></li>");
+        $("ul").append("<li>"+todoText+"<span><i class='fa fa-trash'></i></span></li>");
     }
+});
+
+$(".fa-plus").on("click", function(){
+    $("input[type='text']").fadeToggle();
 });
